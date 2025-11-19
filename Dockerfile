@@ -11,5 +11,6 @@ WORKDIR /app
 
 # Copy the built jar
 COPY --from=build /home/gradle/src/build/libs/*.jar app.jar
+ENV PORT=8080
 EXPOSE 8080
 ENTRYPOINT ["java","-jar","/app/app.jar"]
